@@ -1,0 +1,54 @@
+#ifndef _SHARE_H_
+#define _SHARE_H_
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <sys/types.h>
+#include <signal.h>
+#include <pthread.h>
+
+/* 数据类型  */
+#define TYPE_EXIT 0       //退出
+#define TYPE_LOGIN 1      //登陆
+#define TYPE_REG 2        //注册
+#define TYPE_CHAT 3	      //单聊	
+#define TYPE_MSG 4        //群聊
+#define TYPE_HEART 5	  //心跳
+#define TYPE_CMD 6		  //命令
+#define TYPE_OK 7		  //正常
+#define TYPE_ERR 8		  //错误
+#define TYPE_CHECK 9	  //校验
+#define TYPE_READ 10	  //读取
+
+/* 数据包结构 */
+typedef struct 
+{
+	int type;
+	char name[20];
+	char passwd[20];
+	char message[1024];
+	char cmd[20];
+	char data[200];
+}DataPack;
+
+struct onLine 
+{
+	int fd;
+	char name[20];
+};
+
+struct onLineLink
+{
+	struct onLine data;
+	struct onLineLink* next;
+};
+
+
+
+#endif

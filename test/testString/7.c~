@@ -1,0 +1,9 @@
+#include <stdio.h>
+#include <netinet/in.h>
+3 	int main()
+4 	{
+5 	    int i_num = 0x12345678;
+6 	    printf("[0]:0x%x\n", *((char *)&i_num + 0));
+7 	    printf("[1]:0x%x\n", *((char *)&i_num + 1));
+8 	    printf("[2]:0x%x\n", *((char *)&i_num + 2));
+9 	    printf("[3]:0x%x\n", *((char *)&i_num + 3));

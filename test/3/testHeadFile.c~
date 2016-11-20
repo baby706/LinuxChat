@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include "user.h"
+
+int main(void)
+{
+	struct user lb;
+	
+	dis(&lb);
+	
+	return 0;
+}

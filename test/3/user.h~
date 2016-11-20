@@ -1,0 +1,5 @@
+struct user
+{
+	int age;
+	char name;
+};

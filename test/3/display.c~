@@ -1,0 +1,7 @@
+#include <stdio.h>
+#include "user.h"
+
+void dis(struct user* userHead)
+{
+	printf("this is a test!\n");
+}
